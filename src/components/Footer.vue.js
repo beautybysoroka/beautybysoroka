@@ -2,7 +2,7 @@ const contacts = {
     EMAIL: 'mailto:beautybysoroka@gmail.com',
     INSTAGRAM: 'https://www.instagram.com/beautybysoroka/',
     PHONE: 'tel:+4591921235',
-    WHATSAPP: 'https://wa.me/+79143366399',
+    WHATSAPP: 'https://wa.me/+4591921235',
     TELEGRAM: 'https://t.me/sorokamarie',
 };
 debugger; /* PartiallyEnd: #3632/scriptSetup.vue */
