@@ -1,9 +1,0 @@
-<script>
-    const redirect = sessionStorage.getItem('redirect');
-    if (redirect && redirect !== '/') {
-        sessionStorage.removeItem('redirect');
-        window.history.replaceState(null, '', redirect);
-    } else {
-        sessionStorage.removeItem('redirect');
-    }
-</script>
