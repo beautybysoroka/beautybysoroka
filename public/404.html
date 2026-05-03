@@ -1,12 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <script>
-        const path = window.location.pathname;
-        sessionStorage.setItem('redirect', path);
-        window.location.replace('/');
-    </script>
-</head>
-<body></body>
-</html>
+<script>
+    const redirect = sessionStorage.getItem('redirect');
+    if (redirect && redirect !== '/') {
+        sessionStorage.removeItem('redirect');
+        window.history.replaceState(null, '', redirect);
+    } else {
+        sessionStorage.removeItem('redirect');
+    }
+</script>
