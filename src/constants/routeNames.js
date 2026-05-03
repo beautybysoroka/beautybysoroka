@@ -1,0 +1,8 @@
+export default {
+    PLAN: 'PLAN',
+    MAIN: 'MAIN',
+    PRICE: 'PRICE',
+    PORTFOLIO: 'PORTFOLIO',
+    QUASTIONNAIRE: 'QUASTIONNAIRE',
+
+}
