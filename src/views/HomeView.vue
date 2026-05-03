@@ -207,13 +207,14 @@ body {
         transform: translate(50px, -45px);
       }
       &-3_1 {
-        width: 60%;
+        width: 50%;
         position: absolute;
         left: 0;
         top: 22vh;
+        z-index: 4;
       }
       &-3_2 {
-        width: 50%;
+        width: 60%;
       }
       &-3_3 {
         width: 70%;
