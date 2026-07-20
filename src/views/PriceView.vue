@@ -13,36 +13,38 @@ const { isDanish, dict } = storeToRefs(dictStore)
 
 const prices = {
   dkk: [
-    { title: 'Makeup / Hairstyle', price: '900 dkk' },
-    { title: 'Makeup plus hair', price: '1500 dkk' },
+    { title: 'Makeup / Hairstyle', price: '1500 dkk' },
+    { title: 'Makeup plus hair', price: '2300 dkk' },
+    { title: 'Bride + 1 Bridesmaid ', price: '3400 dkk' },
+    { title: 'Bride + 2 Bridesmaids ', price: '4500 dkk' },
+    { title: 'Bride + 3 Bridesmaids ', price: '5600 dkk' },
     { title: 'Arrival before 8am', price: '300 dkk' },
-    { title: 'Bride + 1 Bridesmaid ', price: '2800 dkk' },
-    { title: 'Bride + 2 Bridesmaids ', price: '4000 dkk' },
-    { title: 'Bride + 3 Bridesmaids ', price: '5000 dkk' },
+    { title: 'Arrival before 7am', price: '600 dkk' },
     { title: 'Areas not in greater CPH', price: 'DM me' },
     { title: 'Other cities in Europe', price: 'DM me' }
   ],
   euro: [
-    { title: 'Makeup / Hairstyle', price: '120 €' },
-    { title: 'Makeup plus hair', price: '200 €' },
+    { title: 'Makeup / Hairstyle', price: '200 €' },
+    { title: 'Makeup plus hair', price: '300 €' },
+    { title: 'Bride + 1 Bridesmaid', price: '450 €' },
+    { title: 'Bride + 2 Bridesmaid', price: '600 €' },
+    { title: 'Bride + 3 Bridesmaid', price: '750 €' },
     { title: 'Arrival before 8am', price: '40 €' },
-    { title: 'Bride + 1 Bridesmaid', price: '370 €' },
-    { title: 'Bride + 2 Bridesmaid', price: '530 €' },
-    { title: 'Bride + 3 Bridesmaid', price: '665 €' },
+    { title: 'Arrival before 7am', price: '80 €' },
     { title: 'Areas not in greater CPH', price: 'DM me' },
-    { title: 'Other cities in Europe', price: 'Depends on distance' }
+    { title: 'Other cities in Europe', price: 'DM me' }
   ]
 }
 const makeup = {
   dkk: [
-    { title: 'Makeup', price: '900 dkk' },
-    { title: 'Hairstyle', price: '900 dkk' },
-    { title: 'Makeup & hairstyle', price: '1500 dkk' }
+    { title: 'Makeup', price: '1500 dkk' },
+    { title: 'Hairstyle', price: '1500 dkk' },
+    { title: 'Makeup & hairstyle', price: '2300 dkk' }
   ],
   euro: [
-    { title: 'Makeup', price: '120 €' },
-    { title: 'Hairstyle', price: '120 €' },
-    { title: 'Makeup & hairstyle', price: '200 €' }
+    { title: 'Makeup', price: '200 €' },
+    { title: 'Hairstyle', price: '200 €' },
+    { title: 'Makeup & hairstyle', price: '300 €' }
   ]
 }
 const specialOffer = {
@@ -80,43 +82,45 @@ const other = {
   ]
 }
 
- const prices_dk = {
+const prices_dk = {
   dkk: [
-    { title: 'Makeup / Hårstyling', price: '900 dkk' },
-    { title: 'Makeup og hår', price: '1500 dkk' },
+    { title: 'Makeup / Hårstyling', price: '1500 dkk' },
+    { title: 'Makeup og hår', price: '2300 dkk' },
+    { title: 'Brud + 1 brudepige', price: '3400 dkk' },
+    { title: 'Brud + 2 brudepiger', price: '4500 dkk' },
+    { title: 'Brud + 3 brudepiger', price: '5600 dkk' },
     { title: 'Ankomst før kl. 08:00', price: '300 dkk' },
-    { title: 'Brud + 1 brudepige', price: '2800 dkk' },
-    { title: 'Brud + 2 brudepiger', price: '4000 dkk' },
-    { title: 'Brud + 3 brudepiger', price: '5000 dkk' },
+    { title: 'Ankomst før kl. 07:00', price: '600 dkk' },
     { title: 'Områder uden for Storkøbenhavn', price: 'Skriv til mig' },
     { title: 'Andre byer i Europa', price: 'Skriv til mig' }
   ],
   euro: [
-    { title: 'Makeup / Hårstyling', price: '120 €' },
-    { title: 'Makeup og hår', price: '200 €' },
+    { title: 'Makeup / Hårstyling', price: '200 €' },
+    { title: 'Makeup og hår', price: '300 €' },
+    { title: 'Brud + 1 brudepige', price: '450 €' },
+    { title: 'Brud + 2 brudepiger', price: '600 €' },
+    { title: 'Brud + 3 brudepiger', price: '750 €' },
     { title: 'Ankomst før kl. 08:00', price: '40 €' },
-    { title: 'Brud + 1 brudepige', price: '370 €' },
-    { title: 'Brud + 2 brudepiger', price: '530 €' },
-    { title: 'Brud + 3 brudepiger', price: '665 €' },
+    { title: 'Ankomst før kl. 07:00', price: '80 €' },
     { title: 'Områder uden for Storkøbenhavn', price: 'Skriv til mig' },
-    { title: 'Andre byer i Europa', price: 'Afhænger af afstand' }
+    { title: 'Andre byer i Europa', price: 'Skriv til mig' }
   ]
 }
 
- const makeup_dk = {
+const makeup_dk = {
   dkk: [
-    { title: 'Makeup', price: '900 dkk' },
-    { title: 'Hårstyling', price: '900 dkk' },
-    { title: 'Makeup og hår', price: '1500 dkk' }
+    { title: 'Makeup', price: '1500 dkk' },
+    { title: 'Hårstyling', price: '1500 dkk' },
+    { title: 'Makeup og hår', price: '2300 dkk' }
   ],
   euro: [
-    { title: 'Makeup', price: '120 €' },
-    { title: 'Hårstyling', price: '120 €' },
-    { title: 'Makeup og hår', price: '200 €' }
+    { title: 'Makeup', price: '200 €' },
+    { title: 'Hårstyling', price: '200 €' },
+    { title: 'Makeup og hår', price: '300 €' }
   ]
 }
 
- const other_dk = {
+const other_dk = {
   dkk: [
     { title: 'Bryn', price: '350 dkk' }
     /*,
