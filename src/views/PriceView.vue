@@ -49,11 +49,11 @@ const makeup = {
 }
 const specialOffer = {
   dkk: [
-    { title: 'Makeup + Hair', price: '1000 dkk' },
+    { title: 'Makeup + Hair', price: '1500 dkk' },
     { title: 'Photoshoot', price: 'check on the website' },
   ],
   euro: [
-    { title: 'Makeup + Hair', price: '135 euro' },
+    { title: 'Makeup + Hair', price: '200 euro' },
     { title: 'Photoshoot', price: 'check on the website' },
   ]
 }
