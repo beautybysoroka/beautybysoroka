@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build && cp dist/index.html dist/404.html",
+    "build": "vue-tsc -b && vite-ssg build && node scripts/finalize-seo.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -17,11 +17,14 @@
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
+    "@unhead/vue": "^2.1.17",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/tsconfig": "^0.8.1",
+    "beasties": "^0.3.5",
     "sass-embedded": "^1.93.2",
     "typescript": "~5.8.3",
     "vite": "^7.1.7",
+    "vite-ssg": "^28.3.0",
     "vue-tsc": "^3.0.7"
   }
 }

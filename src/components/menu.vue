@@ -25,7 +25,7 @@ const isMainPage = computed(() => route.name === routeNames.MAIN)
 <template>
   <div class="burger-menu">
     <!-- Burger Icon -->
-    <button class="burger-icon" @click="isOpen = !isOpen" :class="{ 'burger-icon_white': isMainPage }">
+    <button aria-label="Menu" :aria-expanded="isOpen" class="burger-icon" @click="isOpen = !isOpen" :class="{ 'burger-icon_white': isMainPage }">
       <span :class="{ open: isOpen }"></span>
       <span :class="{ open: isOpen }"></span>
       <span :class="{ open: isOpen }"></span>
@@ -33,11 +33,11 @@ const isMainPage = computed(() => route.name === routeNames.MAIN)
 
     <!-- Sidebar Menu -->
     <transition name="slide">
-      <nav v-if="isOpen" class="menu">
+      <nav v-show="isOpen" class="menu">
         <router-link
             v-for="item in menuItems"
             :key="item.to"
-            :to="{ name: item.to, hash: item?.hash }"
+            :to="{ name: item.to, params: { locale: route.params.locale }, hash: item?.hash }"
             class="menu-link"
             @click="isOpen = false"
         >

@@ -1,45 +1,21 @@
 <script setup lang="ts">
+import { pages } from '@/seo'
 import textBlock from '@/components/base/textBlock.vue'
 import imageBlock from '@/components/base/ImageBlock.vue'
 import BaseButton from '@/components/base/BaseButton.vue'
-import { useRouter } from "vue-router"
 import routeNames from '@/constants/routeNames'
-import {
-  homeTitle1,
-  homeTitle2,
-  homeTitle3,
-  homeTitle4,
-  homeTitle5,
-  homeTitle6,
-  homeText1,
-  homeText2,
-  homeText3,
-  homeText3_2,
-  homeText4,
-  homeText5,
-  homeText6,
-  seePriceListButtonText,
-  checkForMoreButtonText
-}
-from '@/constants/texts'
 import {useDictionaryStore} from "@/utils/dictionary/dictionary";
 import {storeToRefs} from "pinia";
 
-const router = useRouter()
-
 const dictStore = useDictionaryStore()
-const { dict } = storeToRefs(dictStore)
-
-
-const routeTo = (routeName: string) => { router.push({ name: routeName}) }
-
-
+const { dict, isDanish } = storeToRefs(dictStore)
 </script>
 
 <template>
   <div class="about-wrapper">
-    <img class="image-block__image-0" src="/assets/img/photos/home/Mariia.webp" alt="Mariia Soroks">
-    <img class="image-block__image-0_desktop" src="/assets/img/photos/home/Mariia-desktop.webp" alt="Mariia Soroks">
+    <img class="image-block__image-0" src="/assets/img/photos/home/Mariia.webp" alt="Maria — Beauty by Soroka">
+    <img class="image-block__image-0_desktop" src="/assets/img/photos/home/Mariia-desktop.webp" alt="Maria — Beauty by Soroka">
+    <h1 class="page-heading">{{ pages.home[isDanish ? 'da' : 'en'].heading }}</h1>
     <textBlock
     :title="dict.homeTitle1"
     class="text-block-margin"
@@ -71,16 +47,16 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
     <textBlock
         :title="dict.homeTitle4"
         class="text-block-margin text-block-margin_bottom_20"
-        :text="homeText4"
+        :text="dict.homeText4"
     />
-    <BaseButton :text="'What is the plan? '" @click="routeTo(routeNames.PLAN)"/>
+    <BaseButton :to="{ name: routeNames.PLAN }" :text="dict.menu.plan" />
     <img class="image-block__image-4" src="/assets/img/photos/home/6.webp" alt="">
     <textBlock
         :title="dict.homeTitle5"
         :text="dict.homeText5"
         class="text-block-margin text-block-price text-block-margin_width-60"
     />
-    <BaseButton :text="dict.seePriceListButtonText" @click="routeTo(routeNames.PRICE)"/>
+    <BaseButton :to="{ name: routeNames.PRICE }" :text="dict.seePriceListButtonText" />
     <imageBlock class="image-block__5">
       <img class="image-block__image-5" src="/assets/img/photos/home/12.webp" alt="">
     </imageBlock>
@@ -90,7 +66,7 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
         class="text-block-margin text-block-margin_width-70"
         :text="dict.homeText6"
     />
-    <BaseButton :text="dict.checkForMoreButtonText" @click="routeTo(routeNames.PORTFOLIO)"/>
+    <BaseButton :to="{ name: routeNames.PORTFOLIO }" :text="dict.checkForMoreButtonText" />
   </div>
 </template>
 

@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { useRouter, useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
 import routeNames from '@/constants/routeNames'
 import Menu from '@/components/menu.vue'
 import LangSwitcher from '@/components/base/langSwitcher.vue'
 import { computed } from 'vue'
 
-const router = useRouter()
-const routeToMain = () => { router.push({ name: routeNames.MAIN }) }
 const route = useRoute()
 const isNotMainPage = computed(() => route.name !== routeNames.MAIN )
 </script>
@@ -14,7 +12,9 @@ const isNotMainPage = computed(() => route.name !== routeNames.MAIN )
 <template>
   <div class="web-header">
     <LangSwitcher />
-    <img  v-if="isNotMainPage" class="web-header__logo" src="/assets/img/base/logo.svg" alt="" @click="routeToMain()">
+    <RouterLink v-if="isNotMainPage" class="web-header__logo" :to="{ name: routeNames.MAIN, params: { locale: route.params.locale } }" aria-label="Beauty by Soroka — Home">
+      <img src="/assets/img/base/logo.svg" alt="Beauty by Soroka">
+    </RouterLink>
     <Menu />
   </div>
 </template>
@@ -29,6 +29,7 @@ const isNotMainPage = computed(() => route.name !== routeNames.MAIN )
 }
 
 .web-header__logo {
+  img { width: 100%; }
   width: 35%;
   @media (min-width: 769px) {
     width: 15%;
