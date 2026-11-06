@@ -74,7 +74,7 @@ const submitForm = async () => {
 <template>
   <div class="questions-wrapper small-common-wrapper">
     <template v-if="!isFormSubmited">
-      <h3>Lets fill simple form to find out your request</h3>
+      <h1>Let’s fill in a simple form to describe your request</h1>
       <div class="questions-form">
 
         <template v-for="item in inputs">
@@ -112,7 +112,7 @@ const submitForm = async () => {
       min-width: 40%;
     }
 
-    h3 {
+    h1 {
       font-size: 20px;
       text-align: left;
       text-transform: uppercase;

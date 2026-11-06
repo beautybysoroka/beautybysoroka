@@ -1,12 +1,17 @@
 <script setup lang="ts">
+import { usePageSeo } from '@/seo'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/base/Header.vue'
+const { heading } = usePageSeo()
 </script>
 
 <template>
   <div class="app-wrapper">
     <Header/>
-    <RouterView />
+    <main>
+      <h1 v-if="heading && $route.meta.page !== 'home'" class="page-heading">{{ heading }}</h1>
+      <RouterView />
+    </main>
   <Footer />
   </div>
 </template>

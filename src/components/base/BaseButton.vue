@@ -1,20 +1,38 @@
 <script setup lang="ts">
-defineProps({
+import { RouterLink, useRoute, type RouteLocationRaw } from 'vue-router'
+import { computed, type PropType } from 'vue'
+
+const props = defineProps({
+  to: {
+    type: [String, Object] as PropType<RouteLocationRaw>,
+    default: undefined
+  },
   text: {
     type: String,
     default: ''
   }
 })
+
+const route = useRoute()
+const destination = computed(() => {
+  if (typeof props.to === 'object' && 'name' in props.to) {
+    return { ...props.to, params: { locale: route.params.locale, ...props.to.params } }
+  }
+  return props.to
+})
 </script>
 
 <template>
-<div class="button-block">
+<component :is="to ? RouterLink : 'div'" :to="destination" class="button-block">
   {{text}}
-</div>
+</component>
 </template>
 
 <style scoped lang="scss">
 .button-block {
+  display: block;
+  font-weight: inherit;
+  color: #1a1a1a;
   border-radius: 8px;
   background-color: #F9E1C7;
   width: fit-content;

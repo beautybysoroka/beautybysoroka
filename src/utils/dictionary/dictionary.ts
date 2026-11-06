@@ -14,31 +14,31 @@ export const useDictionaryStore = defineStore('dictionary', () => {
             'beautiful and feel special on their special day.' +
             ' I\'m passionate about\n' +
             'my job and beauty in general. As a professional, \n' +
-            'I am very schedule precise and always keep \n' +
+            'I’m punctual and carefully plan each appointment. I always keep \n' +
             'my kit tidy and clean.',
 
         homeTitle2: 'BRIDAL \nMAKEUP & HAIR',
         homeText2: 'My main passion is bridal looks. What could be better ' +
-            'then helping brides to feel like a princess? After discovering the joy of' +
-            'being part of weddings, I dedicated myself to perfecting every detail' +
-            'of my work with brides.' +
+            'than helping brides to feel like a princess? After discovering the joy of ' +
+            'being part of weddings, I dedicated myself to perfecting every detail ' +
+            'of my work with brides. ' +
             'Timing, preparation, materials - it\'s all a small puzzle ' +
             'of hundreds of details. And each and every one of them is important. ',
 
         homeTitle3: 'How will we do it? ',
-        homeText3: 'Lets dive into details. How will we do it? ' +
+        homeText3: 'Let’s dive into details. How will we do it? ' +
             'You will send me references and examples of how you want to look, we will ' +
             'discuss details regarding your wishes, your skin tone, what type of photos ' +
-            'you expect to get. Lets make sure everything will be perfect, so you ' +
+            'you expect to get. Let’s make sure everything will be perfect, so you ' +
             'will not find a reason to worry about anything on your special day and focus on being ' +
             'happy and the most beautiful bride in the world. ',
         homeText3_2: 'We also can plan a tryout to make sure everything will look the way ' +
             'you see it.',
 
-        homeTitle4: 'LETS IMAGINE...',
+        homeTitle4: 'LET’S IMAGINE...',
         homeText4: 'We agreed on me helping you\n' +
             'on your special day, figured out makeup\n' +
-            'and hair style. Lets discuss practical stuff. \n' +
+            'and hair style. Let’s discuss practical stuff. \n' +
             'What is your checklist before \n' +
             'the wedding day? ',
 
@@ -49,9 +49,9 @@ export const useDictionaryStore = defineStore('dictionary', () => {
 
         homeTitle6: 'OTHER MAKEUP',
         homeText6: 'I also can prepare you for a big event,\n' +
-            'pregnant or commercial photoshoot.',
+            'maternity or commercial photoshoot.',
 
-        seePriceListButtonText: 'Lets see the price list',
+        seePriceListButtonText: 'Let’s see the price list',
         checkForMoreButtonText: 'Check for more works here',
         planCareText: [
             'Hair should be clean and dry. It’s best to wash it in the evening or morning, but make sure it is completely dry.',
@@ -82,7 +82,7 @@ export const useDictionaryStore = defineStore('dictionary', () => {
         other: "other",
         eyelashes: "Eyelashes",
         touch: "Touch up kit",
-        transit: "My transit to you",
+        transit: "Travel to your location",
         events: "Events",
         offer: "Special offer",
         studio_photo_shoot_with: "Studio photo shoot with",

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { homeTitle5 } from '@/constants/texts'
 import { ref, computed } from 'vue'
 import {useDictionaryStore} from "@/utils/dictionary/dictionary";
 import {storeToRefs} from "pinia";
@@ -60,11 +59,11 @@ const specialOffer = {
 
 const specialOffer_dk = {
   dkk: [
-    { title: 'Makeup + Hår', price: '1000 dkk' },
+    { title: 'Makeup + Hår', price: '1500 dkk' },
     { title: 'Fotoshoot', price: 'tjek på hjemmesiden' },
   ],
   euro: [
-    { title: 'Makeup + Hår', price: '135 €' },
+    { title: 'Makeup + Hår', price: '200 €' },
     { title: 'Fotoshoot', price: 'tjek på hjemmesiden' },
   ]
 }
@@ -145,13 +144,12 @@ const changeCurrency = (currency: Currency) => { currentCurrency.value = currenc
 
 <template>
 <div class="price__wrapper small-common-wrapper">
-  <h2>{{homeTitle5}}</h2>
   <div class="price__currency">
     <p @click="changeCurrency('dkk')" :class="{'price__currency_active': currentCurrency === 'dkk'}">Dkk</p>
     <p>/</p>
     <p @click="changeCurrency('euro')" :class="{'price__currency_active': currentCurrency === 'euro'}">Euro</p>
   </div>
-  <h4>{{ dict.brides }}</h4>
+  <h2>{{ dict.brides }}</h2>
   <div class="price-block" v-for="(price, index) in currentPrices[currentCurrency]" :key="index">
     <p class="price-block__title">{{price.title}}</p>
     <p class="price-block__price">{{price.price}}</p>
@@ -160,12 +158,12 @@ const changeCurrency = (currency: Currency) => { currentCurrency.value = currenc
   <p>{{ dict.eyelashes }}</p>
   <p>{{dict.touch}}</p>
   <p>{{dict.transit}}</p>
-  <h4>{{dict.events}}</h4>
+  <h2>{{dict.events}}</h2>
   <div class="price-block" v-for="(price, index) in currentMakeup[currentCurrency]" :key="index">
     <p class="price-block__title">{{price.title}}</p>
     <p class="price-block__price">{{price.price}}</p>
   </div>
-  <h4>{{dict.offer}}</h4>
+  <h2>{{dict.offer}}</h2>
   <p class="price__about-V">{{dict.studio_photo_shoot_with}} <a href="https://www.victoriafotograf.dk/" target="_blank">Victoria fotograf</a>
     {{dict.there_is_a}}</p>
   <div class="price-block" v-for="(price, index) in special[currentCurrency]" :key="index">
@@ -173,7 +171,7 @@ const changeCurrency = (currency: Currency) => { currentCurrency.value = currenc
     <a v-if="index === 1" href="https://www.victoriafotograf.dk/investment" target="_blank" class="price-block__price price-block__price_orange">{{price.price}}</a>
     <p v-else class="price-block__title">{{price.price}}</p>
   </div>
-  <h4>{{ dict.other }}</h4>
+  <h2>{{ dict.other }}</h2>
   <div class="price-block" v-for="(price, index) in currentOther[currentCurrency]" :key="index">
     <p class="price-block__title">{{price.title}}</p>
     <p class="price-block__price">{{price.price}}</p>
@@ -203,8 +201,7 @@ const changeCurrency = (currency: Currency) => { currentCurrency.value = currenc
   &__wrapper {
     h2 {
       font-size: 24px;
-    }
-    h4 {
+      margin-bottom: 8px;
       text-transform: uppercase;
       margin-top: 40px;
     }
